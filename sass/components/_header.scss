@@ -2,6 +2,7 @@
   border-bottom: 1px solid #ececec;
 
   &__container {
+    position: relative;
     display: flex;
     align-items: center;
   }
@@ -13,12 +14,20 @@
   display: flex;
   align-items: center;
   gap: 92px;
+  flex-grow: 1;
 }
 
 .navigation__list {
   @extend %list;
-  display: flex;
-  gap: 50px;
+  display: none;
+
+  @media screen and (min-width: $table) {
+    display: flex;
+    gap: 50px;
+  }
+
+  @media screen and (min-width: $desktop) {
+  }
 }
 
 .navigation__link {
@@ -45,17 +54,32 @@
 
 .header-contaсts {
   @extend %list;
-  display: flex;
-  margin-left: auto;
-  gap: 50px;
+
+  display: none;
+
+  @media screen and (min-width: $table) {
+    display: block;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    gap: 50px;
+  }
+}
+
+.header-contaсts__item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .header-contaсts__link {
   @extend %link;
   display: inline-flex;
-  padding-top: 32px;
-  padding-bottom: 32px;
-
   color: inherit;
   font-weight: 500;
   font-size: 14px;
@@ -63,6 +87,11 @@
   letter-spacing: 0.02em;
 
   transition: color var(--transition-duration) var(--transition-timing-function);
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 
   &:hover,
   &:focus {

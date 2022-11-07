@@ -12,14 +12,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
-  height: 92px;
+
   color: $color-icon-primary;
   border: 1px solid $color-icon-primary;
   border-radius: 4px;
 
   transition: color var(--transition-duration) var(--transition-timing-function),
     border-color var(--transition-duration) var(--transition-timing-function);
+
+  width: 210px;
+  height: 92px;
+
+  @media screen and (min-width: $table) {
+    width: 226px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 170px;
+  }
 
   &:hover,
   &:focus {

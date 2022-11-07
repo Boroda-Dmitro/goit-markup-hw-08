@@ -5,12 +5,19 @@
     font-size: 16px;
     line-height: 1.18;
     text-align: center;
+
+
 }
 
 .team__list {
     @extend %list;
-    display: flex;
-    gap: 30px;
+
+
+    @media screen and (min-width: $table) {
+        display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      }
 }
 
 .team__item {

@@ -1,7 +1,12 @@
 /* work */
 
 .work {
+    display: none;
     padding-top: 0;
+
+    @media screen and (min-width: $desktop) {
+       display: block; 
+    }
 }
 
 .work__list {

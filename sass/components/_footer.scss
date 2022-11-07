@@ -1,12 +1,27 @@
-/* footer */
-
 .site-footer {
   background-color: $color-background-secondary;
   padding: 60px 0;
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    text-align: left;
+  }
 
   &__box {
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    gap: 60px;
+
+    @media screen and (min-width: $table) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-around;
+    }
+
+    @media screen and (min-width: $desktop) {
+      gap: 0;
+    }
   }
 }
 
@@ -42,11 +57,17 @@
 
 .footer-group {
   &--grow {
-    flex-grow: 1;
+    min-width: 450px;
+
+    @media screen and (min-width: $desktop) {
+      flex-grow: 1;
+    }
   }
   &--position {
-    margin-left: 70px;
-    margin-right: 93px;
+    @media screen and (min-width: $desktop) {
+      margin-left: 70px;
+      margin-right: 93px;
+    }
   }
 }
 
@@ -60,12 +81,17 @@
 }
 
 .subscribe-form {
-  display: flex;
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
   width: 100%;
 }
 
 .subscribe-form__box {
   width: 100%;
+  @media screen and (max-width: calc($desktop - 1px)) {
+    margin-bottom: 20px;
+  }
 }
 
 .subscribe-form__email {
