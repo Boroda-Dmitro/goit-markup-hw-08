@@ -383,8 +383,11 @@ img {
   color: #2196f3;
 }
 
-.footer-group--grow {
-  min-width: 450px;
+@media screen and (max-width: 1199px) {
+  .footer-group--grow {
+    width: 100%;
+    max-width: 450px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .footer-group--grow {
@@ -475,7 +478,6 @@ img {
 .hero {
   background-color: #2f303a;
   text-align: center;
-  display: none;
 }
 .hero__overlay {
   margin: 0 auto;
@@ -649,12 +651,22 @@ img {
   text-align: center;
 }
 
+.team__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
 @media screen and (min-width: 768px) {
   .team__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 30px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
@@ -665,6 +677,20 @@ img {
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.team__img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .team__img {
+    max-width: 354px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .team__img {
+    max-width: 270px;
+  }
 }
 
 .team__meta {
@@ -736,11 +762,17 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 50px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-filter {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .portfolio-filter__btn {
@@ -776,18 +808,49 @@ img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+@media screen and (min-width: 768px) {
+  .product {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .product__item {
-  width: calc((100% - 60px) / 3);
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #eeeeee;
   -webkit-transition: -webkit-box-shadow var(--transition-duration) var(--transition-timing-function);
   transition: -webkit-box-shadow var(--transition-duration) var(--transition-timing-function);
   transition: box-shadow var(--transition-duration) var(--transition-timing-function);
   transition: box-shadow var(--transition-duration) var(--transition-timing-function), -webkit-box-shadow var(--transition-duration) var(--transition-timing-function);
 }
+@media screen and (min-width: 768px) {
+  .product__item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .product__item {
+    width: calc((100% - 60px) / 3);
+  }
+}
 .product__item:hover, .product__item:focus {
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.product_img {
+  width: 100%;
 }
 
 .product__example {
@@ -799,10 +862,10 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(calc(100% + 1px));
+          transform: translateY(calc(100% + 1px));
   -webkit-transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
   transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
   transition: transform var(--transition-duration) var(--transition-timing-function);
@@ -827,9 +890,6 @@ img {
 
 .product__meta {
   padding: 20px 24px;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
 }
 
 .product__title {
@@ -923,10 +983,16 @@ img {
   transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
   transition: transform var(--transition-duration) var(--transition-timing-function);
   transition: transform var(--transition-duration) var(--transition-timing-function), -webkit-transform var(--transition-duration) var(--transition-timing-function);
-  width: 528px;
-  height: 581px;
+  width: 450px;
+  height: 609px;
   padding: 40px;
   background-color: #ffffff;
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal__close-btn {
@@ -1051,9 +1117,15 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 30px;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
+}
+@media screen and (min-width: 1200px) {
+  .modal-form__contract {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .modal-form__link {
@@ -1095,35 +1167,10 @@ img {
   margin: 0 auto;
 }
 
-.menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-@media (max-width: 767px) {
-  .menu {
-    display: none;
-  }
-}
-.menu .link {
-  padding: 10px;
-  color: inherit;
-  text-decoration: none;
-}
-
-.menu .link:hover,
-.menu .link:focus {
-  text-decoration: underline;
-}
-
-.menu-toggle {
+.menu__toggle {
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1138,63 +1185,80 @@ img {
   background-color: transparent;
   cursor: pointer;
   border: none;
-  border-radius: 50%;
   outline: none;
+  fill: #212121;
 }
 
 @media (min-width: 768px) {
-  .menu-toggle {
+  .menu__toggle {
+    display: none;
+  }
+  .menu {
     display: none;
   }
 }
-.menu-toggle:hover,
-.menu-toggle:focus {
-  background-color: rgba(0, 0, 0, 0.1);
+.menu__toggle:hover,
+.menu__toggle:focus {
+  fill: #2196f3;
 }
 
-.menu-container {
+.menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 32px;
-  background-color: #3f51b5;
+  width: 100%;
+  height: 100%;
   z-index: 999;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: -webkit-transform 250ms ease-in-out;
-  transition: -webkit-transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  background-color: #ffffff;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
+  transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+  transition: transform var(--transition-duration) var(--transition-timing-function), -webkit-transform var(--transition-duration) var(--transition-timing-function);
 }
 
-@media screen and (min-width: 480px) {
-  .menu-container {
-    display: none;
-  }
-}
-.menu-container.is-open {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+.is-open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
-.menu-container .menu-toggle {
+.menu__container {
+  position: relative;
+  padding: 48px 40px;
+}
+
+.menu__container .menu__toggle {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 10px;
+  right: 15px;
   color: #fff;
 }
 
-.mobile-menu {
+.menu__mobile {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.mobile-menu .link {
+.menu__link {
   display: block;
-  padding: 10px;
-  color: #fff;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #212121;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: 0.02em;
+}
+.menu__link--active {
+  color: #2196f3;
+}
+.menu__link:hover, .menu__link:focus {
+  color: #2196f3;
+}
+
+.menu-contaсts {
+  margin-top: 50px;
 }/*# sourceMappingURL=main.css.map */

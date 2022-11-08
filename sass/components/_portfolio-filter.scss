@@ -1,9 +1,14 @@
 .portfolio-filter {
   @extend %list;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 50px;
-  justify-content: center;
+  
+  @media screen and (min-width: $table) {
+      justify-content: center;
+}
+
 }
 
 .portfolio-filter__btn {
