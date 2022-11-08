@@ -718,6 +718,9 @@ img {
   gap: 30px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .customers__link {
@@ -957,6 +960,8 @@ img {
   right: 0;
   left: 0;
   bottom: 0;
+  overflow-y: scroll;
+  padding: 93px 15px;
   background-color: rgba(0, 0, 0, 0.2);
   -webkit-transition: opacity var(--transition-duration) var(--transition-timing-function), visibility var(--transition-duration) var(--transition-timing-function);
   transition: opacity var(--transition-duration) var(--transition-timing-function), visibility var(--transition-duration) var(--transition-timing-function);
@@ -974,25 +979,37 @@ img {
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
-          transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
+  margin: 0 auto;
   -webkit-transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
   transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
   transition: transform var(--transition-duration) var(--transition-timing-function);
   transition: transform var(--transition-duration) var(--transition-timing-function), -webkit-transform var(--transition-duration) var(--transition-timing-function);
-  width: 450px;
-  height: 609px;
-  padding: 40px;
   background-color: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
+            transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
+  }
+}
+@media screen and (max-width: 1199px) {
+  .modal {
+    max-width: 450px;
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal {
-    width: 528px;
-    height: 581px;
+    max-width: 528px;
   }
+}
+
+.modal__box {
+  position: relative;
+  padding: 40px;
 }
 
 .modal__close-btn {
