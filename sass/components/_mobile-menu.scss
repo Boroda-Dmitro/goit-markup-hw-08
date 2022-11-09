@@ -35,7 +35,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  
+  overflow-y: scroll;
   z-index: 999;
   background-color: $color-background-primary;
   transform: translateY(-100%);
@@ -49,6 +49,8 @@
 .menu__container {
   position: relative;
   padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu__container .menu__toggle {
@@ -62,6 +64,8 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  margin-bottom: 300px;
+  flex-grow: 1;
 }
 
 .menu__link {
@@ -86,8 +90,51 @@
 }
 
 .menu-contaсts {
-  margin-top: 50px;
+  @extend %list;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 64px;
+}
 
+.menu-contaсts__link {
+  @extend %link;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: $color-text-primary;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+
+  &--size {
+    font-size: 24px;
+  }
+}
+
+.menu-social {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__link {
+    @extend %link;
+    color: $color-accent;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &--first {
+      padding-left: 0;
+    }
+    &--last {
+      padding-right: 0;
+      border: none;
+    }
+  }
 }
 
 // .menu {

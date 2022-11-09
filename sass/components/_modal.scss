@@ -26,12 +26,12 @@
   margin: 0 auto;
   transition: transform var(--transition-duration) var(--transition-timing-function);
   background-color: $color-background-primary;
-  @media screen and (min-width: $table) {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
-  }
+  // @media screen and (min-width: $table) {
+  //   position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
+  // }
 
   @media screen and (max-width: calc($desktop - 1px)) {
     max-width: 450px;
@@ -40,6 +40,10 @@
 
   @media screen and (min-width: $desktop) {
     max-width: 528px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
   }
 }
 
