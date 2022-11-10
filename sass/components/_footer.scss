@@ -84,14 +84,16 @@
 }
 
 .subscribe-form {
+  width: 100%;
+
   @media screen and (min-width: $desktop) {
     display: flex;
   }
-  width: 100%;
 }
 
 .subscribe-form__box {
   width: 100%;
+  
   @media screen and (max-width: calc($desktop - 1px)) {
     margin-bottom: 20px;
   }

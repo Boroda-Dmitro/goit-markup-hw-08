@@ -36,12 +36,11 @@
   padding-top: 32px;
   padding-bottom: 32px;
 
-  color: $color-title;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-
+  color: $color-title;
   transition: color var(--transition-duration) var(--transition-timing-function);
 
   &:hover,
@@ -58,24 +57,26 @@
   display: none;
 
   @media screen and (min-width: $table) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   @media screen and (min-width: $desktop) {
-    display: flex;
+    flex-direction: row;
     gap: 50px;
   }
 }
 
-.header-contaсts__item {
-  &:not(:last-child) {
-    margin-bottom: 10px;
+// .header-contaсts__item {
+//   &:not(:last-child) {
+//     margin-bottom: 10px;
 
-    @media screen and (min-width: $desktop) {
-      margin-bottom: 0;
-    }
-  }
-}
+//     @media screen and (min-width: $desktop) {
+//       margin-bottom: 0;
+//     }
+//   }
+// }
 
 .header-contaсts__link {
   @extend %link;

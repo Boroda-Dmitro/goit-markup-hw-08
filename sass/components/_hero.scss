@@ -8,12 +8,16 @@
     padding-top: 200px;
     padding-bottom: 200px;
     max-width: 1600px;
-    height: 600px;
+    height: 400px;
 
     background-image: $gradient, url(../images/img-hero.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @media screen and (min-width: $desktop) {
+      height: 600px;      
+    }
   }
   &__title {
     display: block;

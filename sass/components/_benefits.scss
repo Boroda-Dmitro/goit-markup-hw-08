@@ -1,37 +1,32 @@
 .benefits {
   text-align: center;
-  @media screen and (min-width: $table) { 
+
+  @media screen and (min-width: $table) {
     text-align: left;
   }
 }
 
-
-
 .benefits__list {
   @extend %list;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
   @media screen and (min-width: $table) {
-    display: flex;
-    gap: 30px;
+    flex-direction: row;
     flex-wrap: wrap;
   }
- 
-  
 }
 
 .benefits__item {
   @media screen and (min-width: $mobile) {
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
     max-width: 450px;
   }
-  
+
   @media screen and (min-width: $table) {
-    margin: 0;
     max-width: 354px;
   }
-  
+
   @media screen and (min-width: $desktop) {
     max-width: 270px;
   }
@@ -41,7 +36,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-//   width: 270px;
   height: 120px;
   margin-bottom: 30px;
 

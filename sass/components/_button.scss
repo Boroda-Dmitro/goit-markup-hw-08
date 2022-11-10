@@ -2,7 +2,11 @@
   display: inline-block;
 
   min-width: 152px;
-  padding: 10px 32px;
+  padding: 10px 24px;
+
+  @media screen and (min-width: $desktop) {
+    padding: 10px 32px;
+  }
   border: 1px solid transparent;
   border-radius: 4px;
 
