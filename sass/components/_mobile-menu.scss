@@ -13,6 +13,9 @@
   border: none;
   outline: none;
   fill: #212121;
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -40,6 +43,10 @@
   background-color: $color-background-primary;
   transform: translateY(-100%);
   transition: transform var(--transition-duration) var(--transition-timing-function);
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .is-open {

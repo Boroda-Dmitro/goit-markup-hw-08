@@ -1234,6 +1234,11 @@ img {
   outline: none;
   fill: #212121;
 }
+@media (min-width: 768px) {
+  .menu__toggle {
+    display: none;
+  }
+}
 
 @media (min-width: 768px) {
   .menu__toggle {
@@ -1263,6 +1268,11 @@ img {
   transition: -webkit-transform var(--transition-duration) var(--transition-timing-function);
   transition: transform var(--transition-duration) var(--transition-timing-function);
   transition: transform var(--transition-duration) var(--transition-timing-function), -webkit-transform var(--transition-duration) var(--transition-timing-function);
+}
+@media (min-width: 768px) {
+  .menu {
+    display: none;
+  }
 }
 
 .is-open {
