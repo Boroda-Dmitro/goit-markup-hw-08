@@ -25,17 +25,17 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team__img {
-  width: 100%;
+// .team__img {
+//   width: 100%;
 
-  @media screen and (min-width: $table) {
-    max-width: 354px;
-  }
+//   @media screen and (min-width: $table) {
+//     max-width: 354px;
+//   }
 
-  @media screen and (min-width: $desktop) {
-    max-width: 270px;
-  }
-}
+//   @media screen and (min-width: $desktop) {
+//     max-width: 270px;
+//   }
+// }
 
 .team__meta {
   padding-top: 30px;
